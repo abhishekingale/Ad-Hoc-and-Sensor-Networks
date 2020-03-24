@@ -1,0 +1,228 @@
+// These arguments were used when this file was generated. They will be automatically applied on subsequent loads 
+// via the GUI or CLI invocations. Run CLI with '--help' for additional information on how to override these arguments.
+// @cliArgs --board "/ti/boards/CC1352R1_LAUNCHXL" --product "simplelink_cc13x2_26x2_sdk@3.40.00.02"
+// @versions {"data":"2019103101","timestamp":"2019103101","tool":"1.3.1030","templates":"2019103101"}
+
+var RTOS = scripting.addModule("/ti/drivers/RTOS");
+var AESCCM = scripting.addModule("/ti/drivers/AESCCM");
+var AESCCM1 = AESCCM.addInstance();
+var Power = scripting.addModule("/ti/drivers/Power");
+var CCFG = scripting.addModule("/ti/devices/CCFG");
+var AESECB = scripting.addModule("/ti/drivers/AESECB");
+var AESECB1 = AESECB.addInstance();
+var ECDH = scripting.addModule("/ti/drivers/ECDH");
+var ECDH1 = ECDH.addInstance();
+var AESCTRDRBG = scripting.addModule("/ti/drivers/AESCTRDRBG");
+var AESCTRDRBG1 = AESCTRDRBG.addInstance();
+var Display = scripting.addModule("/ti/display/Display");
+var Display1 = Display.addInstance();
+var GPIO = scripting.addModule("/ti/drivers/GPIO");
+var GPIO1 = GPIO.addInstance();
+var GPIO2 = GPIO.addInstance();
+var GPIO3 = GPIO.addInstance();
+var GPIO4 = GPIO.addInstance();
+var NVS = scripting.addModule("/ti/drivers/NVS");
+var NVS1 = NVS.addInstance();
+var NVS2 = NVS.addInstance();
+var RF = scripting.addModule("/ti/drivers/RF");
+var TRNG = scripting.addModule("/ti/drivers/TRNG");
+var TRNG1 = TRNG.addInstance();
+var ble = scripting.addModule("/ti/ble5stack/ble");
+// Name
+AESCCM1.$name = "CONFIG_AESCCM0";
+var DMA = scripting.addModule("/ti/drivers/DMA", {}, false);
+var Board = scripting.addModule("/ti/drivers/Board", {}, false);
+var DriverLib = scripting.addModule("/ti/devices/DriverLib", {}, false);
+// enableCodeGeneration
+CCFG.enableCodeGeneration = false;
+// Name
+AESECB1.$name = "CONFIG_AESECB0";
+// Name
+ECDH1.$name = "CONFIG_ECDH0";
+// Name - The C/C++ identifier used in applications as the index parameter passed to aesctrdrbg runtime APIs
+AESCTRDRBG1.$name = "CONFIG_AESCTRDRBG_0";
+// Name
+AESCTRDRBG1.aesctrObject.$name = "CONFIG_AESCTR_0";
+// Name - The C/C++ identifier used in applications as the index parameter passed to Display runtime APIs
+Display1.$name = "CONFIG_Display_0";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Display1.$hardware = system.deviceData.board.components.XDS110UART;
+// Enable ANSI - Enables or disables ANSI cursor support.
+Display1.enableANSI = true;
+// UART Buffer Size - UART display buffer size in bytes
+Display1.uartBufferSize = 128;
+// Name - The C/C++ identifier used in applications as the index parameter passed to UART runtime APIs
+Display1.uart.$name = "CONFIG_DISPLAY_UART";
+// Output State - Initial Output State
+Display1.uart.txPinInstance.outputState = "High";
+// Name
+Display1.uart.txPinInstance.$name = "CONFIG_PIN_UART_TX";
+// Name
+Display1.uart.rxPinInstance.$name = "CONFIG_PIN_UART_RX";
+// Name
+Display1.uart.uart.$name = "MyUART1";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO1.$hardware = system.deviceData.board.components["BTN-1"];
+// Mode - Select the GPIO mode
+GPIO1.mode = "Dynamic";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO1.$name = "CONFIG_GPIO_BTN1";
+// Name
+GPIO1.pinInstance.$name = "CONFIG_PIN_BTN1";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO2.$hardware = system.deviceData.board.components["BTN-2"];
+// Mode - Select the GPIO mode
+GPIO2.mode = "Dynamic";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO2.$name = "CONFIG_GPIO_BTN2";
+// Name
+GPIO2.pinInstance.$name = "CONFIG_PIN_BTN2";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO3.$hardware = system.deviceData.board.components.LED_RED;
+// Mode - Select the GPIO mode
+GPIO3.mode = "Dynamic";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO3.$name = "CONFIG_GPIO_RLED";
+// Name
+GPIO3.pinInstance.$name = "CONFIG_PIN_RLED";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+GPIO4.$hardware = system.deviceData.board.components.LED_GREEN;
+// Mode - Select the GPIO mode
+GPIO4.mode = "Dynamic";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO4.$name = "CONFIG_GPIO_GLED";
+// Name
+GPIO4.pinInstance.$name = "CONFIG_PIN_GLED";
+// Name - The C/C++ identifier used in applications as the index parameter passed to NVS runtime APIs
+NVS1.$name = "CONFIG_NVSINTERNAL";
+// Name
+NVS1.internalFlash.$name = "ti_drivers_nvs_NVSCC26XX0";
+// Region Base - Base address of the region. Must be aligned on an integer multiple of the sector size.
+NVS1.internalFlash.regionBase = 0x48000;
+// Region Size - Size of the region in bytes. Must be a non-zero multiple of the Sector Size
+NVS1.internalFlash.regionSize = 0x4000;
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+NVS2.$hardware = system.deviceData.board.components.MX25R8035F;
+// Name - The C/C++ identifier used in applications as the index parameter passed to NVS runtime APIs
+NVS2.$name = "CONFIG_NVSEXTERNAL";
+// Name
+NVS2.externalFlash.$name = "ti_drivers_nvs_NVSSPI25X0";
+// Region Size - Size of the region in bytes. Must be a non-zero multiple of the Sector Size
+NVS2.externalFlash.regionSize = 0x100000;
+// Verify Buffer Size - Size of the write verification buffer in bytes.
+NVS2.externalFlash.verifyBufferSize = 64;
+var NVSSPI25XDevice = scripting.addModule("/ti/drivers/nvs/NVSSPI25XDevice", {}, false);
+var NVSSPI25XDevice1 = NVSSPI25XDevice.addInstance({}, false);
+NVS2.externalFlash.spiFlashDevice = NVSSPI25XDevice1; // Assign reference
+// Name
+NVSSPI25XDevice1.$name = "CONFIG_NVS_SPI_0";
+// Mode - Select the GPIO mode
+NVSSPI25XDevice1.slaveSelectGpioInstance.mode = "Output";
+// Callback Function - The name of the callback function called when this GPIO pin triggers an interrupt, or 'NULL' if it's specified at runtime
+NVSSPI25XDevice1.slaveSelectGpioInstance.callbackFunction = "";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+NVSSPI25XDevice1.slaveSelectGpioInstance.$name = "CONFIG_GPIO_0";
+// Name
+NVSSPI25XDevice1.slaveSelectGpioInstance.pinInstance.$name = "CONFIG_PIN_0";
+var SPI = scripting.addModule("/ti/drivers/SPI", {}, false);
+var SPI1 = SPI.addInstance({}, false);
+NVSSPI25XDevice1.sharedSpiInstance = SPI1; // Assign reference
+// Name - The C/C++ identifier used in applications as the index parameter passed to SPI runtime APIs
+SPI1.$name = "CONFIG_SPI_0";
+// Name
+SPI1.sclkPinInstance.$name = "CONFIG_PIN_1";
+// Name
+SPI1.misoPinInstance.$name = "CONFIG_PIN_2";
+// Name
+SPI1.mosiPinInstance.$name = "CONFIG_PIN_3";
+// Name
+SPI1.spi.$name = "MySSI1";
+// Name - The C/C++ identifier used in applications as the index parameter passed to TRNG runtime APIs
+TRNG1.$name = "CONFIG_TRNG_0";
+// Lock Project
+ble.lockProject = true;
+// Device Name
+ble.deviceName = "Project Zero";
+// Address Mode
+ble.addressMode = "ADDRMODE_PUBLIC";
+// Disable the Display Module
+ble.disableDisplayModule = true;
+// UART Log
+ble.uartLog = true;
+// Maximum size of PDU (bytes)
+ble.maxPDUSize = 251;
+// Maximum Number of Connections
+ble.maxConnNum = 2;
+// Name
+ble.radioConfig.codeExportConfig.$name = "ti_devices_radioconfig_code_export_param0";
+// Name
+ble.connUpdateParamsPeripheral.$name = "ti_ble5stack_general_ble_conn_update_params0";
+// Update Connection Timeout (ms)
+ble.connUpdateParamsPeripheral.upConnTo = 2000;
+// Update Max Connection Interval (ms)
+ble.connUpdateParamsPeripheral.upMaxConnInt = 45;
+// Update Min Connection Interval (ms)
+ble.connUpdateParamsPeripheral.upMinConnInt = 15;
+// Name
+ble.advSet1.$name = "ti_ble5stack_broadcaster_advertisement_set0";
+// Name
+ble.advSet1.advParam1.$name = "ti_ble5stack_broadcaster_advertisement_params0";
+// Primary Channel Map
+ble.advSet1.advParam1.primChanMap = ["GAP_ADV_CHAN_37"];
+// Name
+ble.advSet1.advData1.$name = "ti_ble5stack_broadcaster_advertisement_data0";
+// Gap Advertising Flags
+ble.advSet1.advData1.GAP_ADTYPE_FLAGS = true;
+// Advertising Flags
+ble.advSet1.advData1.advertisingFlags = ["GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED","GAP_ADTYPE_FLAGS_GENERAL"];
+// Complete local name
+ble.advSet1.advData1.GAP_ADTYPE_LOCAL_NAME_COMPLETE = true;
+// Complete Local Name
+ble.advSet1.advData1.completeLocalName = "Project Zero";
+// Name
+ble.advSet1.scanRes1.$name = "ti_ble5stack_broadcaster_advertisement_data1";
+// More 128-bit UUIDs available
+ble.advSet1.scanRes1.GAP_ADTYPE_128BIT_MORE = true;
+// Num of UUIDs (128-bit More)
+ble.advSet1.scanRes1.numOfUUIDs128More = 1;
+// UUID 0 (128-bit More)
+ble.advSet1.scanRes1.UUID0128More = system.utils.bigInt("B000405104101100F0",16);
+// Name
+ble.advSet2.$name = "ti_ble5stack_broadcaster_advertisement_set1";
+// Name
+ble.advSet2.advParam2.$name = "ti_ble5stack_broadcaster_advertisement_params1";
+// Primary Channel Map
+ble.advSet2.advParam2.primChanMap = ["GAP_ADV_CHAN_37"];
+// Name
+ble.advSet2.advData2.$name = "ti_ble5stack_broadcaster_advertisement_data2";
+// Name
+ble.advSet2.scanRes2.$name = "ti_ble5stack_broadcaster_advertisement_data3";
+var multi_stack_validate = scripting.addModule("/ti/easylink/multi_stack_validate", {}, false);
+// Suggest solution
+Display1.uart.uart.$suggestSolution = "UART1";
+// Suggest solution
+Display1.uart.uart.txPin.$suggestSolution = "19";
+// Suggest solution
+Display1.uart.uart.rxPin.$suggestSolution = "18";
+// Suggest solution
+GPIO1.gpioPin.$suggestSolution = "21";
+// Suggest solution
+GPIO2.gpioPin.$suggestSolution = "20";
+// Suggest solution
+GPIO3.gpioPin.$suggestSolution = "11";
+// Suggest solution
+GPIO4.gpioPin.$suggestSolution = "12";
+// Suggest solution
+NVSSPI25XDevice1.slaveSelectGpioInstance.gpioPin.$suggestSolution = "30";
+// Suggest solution
+SPI1.spi.$suggestSolution = "SSI0";
+// Suggest solution
+SPI1.spi.sclkPin.$suggestSolution = "16";
+// Suggest solution
+SPI1.spi.misoPin.$suggestSolution = "14";
+// Suggest solution
+SPI1.spi.mosiPin.$suggestSolution = "15";
+// Suggest solution
+SPI1.spi.dmaRxChannel.$suggestSolution = "DMA_CH3";
+// Suggest solution
+SPI1.spi.dmaTxChannel.$suggestSolution = "DMA_CH4";
